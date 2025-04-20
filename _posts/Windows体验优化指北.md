@@ -1,0 +1,35 @@
+# Windows体验优化指北
+
+---
+
+### 卸载程序优化
+
+> 在电脑上运行软件安装包时，安装程序会生成一些程序文件、后台服务和注册表项等，用以支持软件的正常运行。但是，在卸载软件时，一些软件的卸载程序卸载不干净，甚至不提供卸载程序。
+> 
+> 就可能会出现一些问题：
+> 
+> - 产生卸载残留（垃圾文件、注册表等）；
+> - 垃圾文件堆积太多，拖累电脑系统；
+> - 可能导致再次安装软件时安装失败。
+
+   使用控制面板中的卸载程序可以解决大部分程序的卸载，然而若要更干净彻底地卸载程序，可以采用:
+
+**Geek Uninstaller** 官网地址：[Geek Uninstaller - 下载](https://geekuninstaller.com/download)
+
+---
+
+### 桌面美化
+
+- **TranslucentTB**
+  
+  [半透明TB |一个轻量级实用程序，使 Windows 任务栏半透明/透明。](https://translucenttb.github.io/)
+  
+  可直接在**Microsoft Store**下载
+
+- **Nilesoft shell**
+  
+  [Nilesoft Shell——Win11 完美右键插件](https://nilesoft.org/)
+  
+  配置修改方式: [简介 - Shell](https://nilesoft.org/docs)
+
+
