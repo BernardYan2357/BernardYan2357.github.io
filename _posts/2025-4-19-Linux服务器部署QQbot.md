@@ -7,8 +7,8 @@
   顺便一提，Napcat的控制面板做的真的很好，甚至还能导入网易云歌单听歌😋。
   
 - Koishi 是一个跨平台、可扩展、高性能的聊天机器人框架。[Koishi 古明地恋](https://koishi.chat/zh-CN/)
-  
-  ---
+
+---
   
 
 ### 配置Napcat
