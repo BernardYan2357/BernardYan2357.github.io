@@ -1,9 +1,9 @@
-Linux服务器部署QQbot
+### Linux服务器部署QQbot
 
 本指南采用**Napcat + koishi**方式部署QQ机器人
 
-- NapCat通过魔法✨的手段获得了 QQ 的发送消息、接收消息等接口并把他们以OneBot的规范开放，允许其他组件按照规范进行通信。 [NapCatQQ | 现代化的基于 NTQQ 的 Bot 协议端实现](https://napneko.pages.dev/)
-  
+- NapCat通过魔法✨的手段获得了 QQ 的发送消息、接收消息等接口并把他们以OneBot的规范开放，允许其他组件按照规范进行通信。
+  [NapCatQQ | 现代化的基于 NTQQ 的 Bot 协议端实现](https://napneko.pages.dev/)
   顺便一提，Napcat的控制面板做的真的很好，甚至还能导入网易云歌单听歌😋。
   
 - Koishi 是一个跨平台、可扩展、高性能的聊天机器人框架。[Koishi 古明地恋](https://koishi.chat/zh-CN/)
