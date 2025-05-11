@@ -5,11 +5,10 @@
 - NapCat通过魔法✨的手段获得了 QQ 的发送消息、接收消息等接口并把他们以OneBot的规范开放，允许其他组件按照规范进行通信。
   [NapCatQQ | 现代化的基于 NTQQ 的 Bot 协议端实现](https://napneko.pages.dev/)
   顺便一提，Napcat的控制面板做的真的很好，甚至还能导入网易云歌单听歌😋。
-  
+
 - Koishi 是一个跨平台、可扩展、高性能的聊天机器人框架。[Koishi 古明地恋](https://koishi.chat/zh-CN/)
 
 ---
-  
 
 ### 配置Napcat
 
@@ -70,27 +69,26 @@ services:
     平台：`onebot`, 账号：`你自己的QQ号`
     
     之后向QQbot发送验证码即可完成绑定。
-    
+  
   - 普通用户权限为1，请在指令管理界面将重要指令权限提高。
-    
+
 - **插件安装**
   
   - 安装完Koishi，第一步：点开依赖管理，刷新，点击小火箭🚀更新依赖。
     
     插件市场选择插件添加>安装>点击插件配置>全局配置>添加插件>选择插件>配置参数>保存配置>启用插件。
-    
+
 - **插件市场镜像源配置**
   
   - 如果你无法加载插件市场，或出现“正在加载版本数据”提示，说明你需要更换镜像源了。
-    
+  
   - [Koishi 镜像一览 - 技术分享 - Koishi Forum](https://forum.koishi.xyz/t/topic/4000)
-    
+  
   - 配置镜像源步骤：点击插件配置，点击插件：`market`
     
     `registry.endpoint`写入`https://registry.npmmirror.com/`
     
     `search.endpoint`写入`https://registry.koishi.chat/index.json(可以换成其他的市场镜像)`
-    
 
 ---
 
