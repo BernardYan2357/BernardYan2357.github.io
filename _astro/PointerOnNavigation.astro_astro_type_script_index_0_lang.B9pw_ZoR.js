@@ -1,0 +1,1 @@
+import{T as t,a as n}from"./router.BcCb-G8O.js";document.addEventListener(t,()=>document.documentElement.style.cursor="pointer");document.addEventListener(n,e=>(e.newDocument.documentElement.style.cursor="pointer",e.viewTransition.finished.then(()=>document.documentElement.style.cursor="")));
