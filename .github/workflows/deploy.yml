@@ -31,5 +31,6 @@ jobs:
           github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-          nojekyll: true
+          disable_nojekyll: false
+
 
