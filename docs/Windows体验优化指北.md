@@ -1,0 +1,92 @@
+# Windows体验优化指北
+
+## 功能增强
+
+使用PowerToys增强Windows功能：
+[PowerToys 官方文档](https://learn.microsoft.com/zh-cn/windows/powertoys/)
+
+提供一系列实用工具来提升Windows的使用体验。
+
+## 卸载程序优化
+
+在电脑上运行软件安装包时，安装程序会生成一些程序文件、后台服务和注册表项等，用以支持软件的正常运行。但是，在卸载软件时，一些软件的卸载程序卸载不干净，甚至不提供卸载程序。
+可能会导致：
+
+- 卸载不彻底，残留文件和注册表项；
+- 系统垃圾文件增多，影响性能；
+- 可能导致软件无法重新安装或出现冲突。
+
+使用控制面板中的卸载程序可以解决大部分程序的卸载，然而若要更干净彻底地卸载程序，可以采用:
+
+**Geek Uninstaller** 官网地址：[Geek Uninstaller - 下载](https://geekuninstaller.com/download)
+
+> 谨慎使用Geek Uninstaller，存在过度清理注册表的风险，可能会导致系统不稳定或软件无法正常运行。
+
+建议使用前备份注册表或创建系统还原点。
+
+系统还原点创建方法：
+
+1. 在搜索栏中输入“创建还原点”，打开系统属性窗口。
+2. 在“系统保护”选项卡中，选择要创建还原点的驱动器（通常是C盘），创建还原点。
+3. 创建完成后点击“关闭”按钮，完成还原点创建。
+4. 在需要恢复时，打开“系统属性”窗口，点击“系统还原”，选择之前创建的还原点进行恢复。
+
+## 在默认打开方式设置中去掉已失效\已删除的应用选项
+
+打开注册表编辑器，定位到以下路径：
+
+方法一：
+
+`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\(后缀名)\OpenWithList`
+右侧窗口即显示出某某文件的“打开方式”中的各种应用程序 用鼠标右击要清除的项目选择“删除”即可
+
+方法二：
+
+`HKEY_USERS\S-1-5-21-4024916612-1691460616-483768494-1001\Software\Classes\Applications`
+删除已失效的应用程序文件夹
+
+## 界面美化
+
+- **TranslucentTB**
+  
+  [半透明TB |一个轻量级实用程序，使 Windows 任务栏半透明/透明。](https://translucenttb.github.io/)
+  
+  可直接在**Microsoft Store**下载
+
+- **Nilesoft shell**
+  
+  [Nilesoft Shell——Win11 完美右键插件](https://nilesoft.org/)
+  
+  配置修改方式: [简介 - Shell](https://nilesoft.org/docs)
+
+- **终端开启亚克力效果、自定义背景\颜色**
+  
+  打开终端`设置-外观`选项，开启`在选项卡行中使用亚克力材料`
+  
+  选项卡中选择`打开 JSON 文件`，使用 vscode 打开
+  
+  `CTRL+F`，查找`profile`，找到`"profiles"`名称的字符串
+  
+  在`"list"`中找到`"name": "Windows PowerShell"`(不同环境的配置是独立的，此处以powershell为例)
+  
+  在其下添加以下对象：
+
+  ```json
+  "background": "#FFFFFF", //背景颜色填充
+  "useAcrylic": ture, //开启亚克力效果
+  "opacity": 50, //不透明度，参数是0～100的整数
+  "backgroundImage": <图像路径，示例：C:\\Users\\ASUS\\picture\\example.jpg>
+  "backgroundImageOpacity": 0.5, //背景不透明度，参数是0~1
+  "backgroundStretchMode": fill, //or uniform  or uniformTofill
+  "backgroundImageAlignment"：center, //图像对齐方式
+  ```
+
+## 更新推迟
+
+`win+R`呼出运行窗口，输入`regedit`打开注册表。
+
+> 注册表目录：`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Update\UX\Settings`
+
+在该目录下右键创建新的DWORD(32位)值，名称为`FlightSettingsMaxPauseDays`，数值为`20000`。
+
+关闭，再打开windows更新页面，选择推迟日期。
