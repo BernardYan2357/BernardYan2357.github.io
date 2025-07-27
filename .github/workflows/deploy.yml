@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
@@ -8,23 +7,17 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
 
-      - name: Setup PNPM
+      - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: '8'
 
       - name: Install dependencies
         run: pnpm install
@@ -39,3 +32,4 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           nojekyll: true
+
