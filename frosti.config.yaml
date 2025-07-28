@@ -30,9 +30,19 @@ site:
       target: _self
       subItems:
         - id: all
-          text: All blogs
+          text: 全部文章
           href: /blog
           svg: "material-symbols:ink-pen-outline-rounded"
+          target: _self
+        - id: 教程
+          text: 教程
+          href: /blog/category/教程
+          svg: "material-symbols:auto-stories-rounded"
+          target: _self
+        - id: 笔记
+          text: 笔记
+          href: /blog/category/笔记
+          svg: "material-symbols:attach-file"
           target: _self
         - id: documentation
           text: Documentation
