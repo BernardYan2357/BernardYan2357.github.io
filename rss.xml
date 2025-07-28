@@ -113,10 +113,10 @@ tags:
 ---
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;将图片放置于&lt;code&gt;public/assets/blog/&amp;lt;YYYY-MM-DD-文章标题&amp;gt;&lt;/code&gt;目录下，而在&lt;code&gt;frontmatter&lt;/code&gt;里的路径只需写为&lt;code&gt;/assets/blog/&amp;lt;YYYY-MM-DD-文章标题&amp;gt;/post.png&lt;/code&gt;即可。（在Astro项目中，&lt;code&gt;public&lt;/code&gt;目录就是网站的根目录）&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这里摸索了好久🥲，感谢Copilot指点
+&lt;li&gt;&lt;p&gt;将图片放置于&lt;code&gt;public/assets/blog/&amp;lt;YYYY-MM-DD-文章标题&amp;gt;&lt;/code&gt;目录下，而在&lt;code&gt;frontmatter&lt;/code&gt;里的路径只需写为&lt;code&gt;/assets/blog/&amp;lt;YYYY-MM-DD-文章标题&amp;gt;/post.png&lt;/code&gt;即可。（在Astro项目中，&lt;code&gt;public&lt;/code&gt;目录就是网站的根目录）
 构建后，图片将位于&lt;code&gt;dist/assets/blog/&amp;lt;YYYY-MM-DD-文章标题&amp;gt;&lt;/code&gt;目录下。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里摸索了好久🥲，感谢Copilot指点&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;使用&lt;code&gt;pnpm run build&lt;/code&gt;命令生成静态文件，生成的html文件位于&lt;code&gt;dist/blog/&amp;lt;YYYY-MM-DD-文章标题&amp;gt;&lt;/code&gt;目录下。&lt;/p&gt;
