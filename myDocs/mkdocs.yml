@@ -1,4 +1,22 @@
 site_name: MuYun's NoteBook
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+theme:
+  language: zh
+  variant: classic
+  features:
+    - navigation.footer
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/BernardYan2357
+copyright: "Copyright &copy; <year> <name>"
 nav:
   - Home: index.md
   - 计算机视觉:
@@ -31,5 +49,3 @@ nav:
       - Foam: Markdown/Foam.md
       - LaTeX: Markdown/LaTeX.md
       - Mermaid: Markdown/Mermaid.md
-theme:
-  name: material
