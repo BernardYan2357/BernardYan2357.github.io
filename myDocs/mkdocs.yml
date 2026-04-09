@@ -1,0 +1,35 @@
+site_name: MuYun's NoteBook
+nav:
+  - Home: index.md
+  - 计算机视觉:
+      - CV基础知识: CV/CV基础知识.md
+      - OpenCV: CV/OpenCV.md
+      - 相机标定: CV/相机标定.md
+      - 双目测距: CV/双目测距.md
+      - 数据集: CV/数据集.md
+      - 视觉抓取方案: CV/视觉抓取方案.md
+      - 6D位姿估计: CV/6d位姿估计.md
+      - YOLO:
+          - YOLO基础: CV/YOLO/YOLO基础.md
+          - YOLO训练: CV/YOLO/YOLO训练.md
+          - YOLO验证: CV/YOLO/YOLO验证.md
+          - YOLO预测: CV/YOLO/YOLO预测.md
+  - Linux:
+      - Linux概览: linux/linux.md
+      - Linux命令: linux/linux命令.md
+      - Linux桌面环境: linux/linux桌面环境.md
+      - 远程连接: linux/远程连接.md
+      - Docker使用: linux/Docker使用.md
+      - Linux优化笔记: linux/Linux优化笔记.md
+      - WSL2: linux/WSL2.md
+      - Linux文本编辑器: linux/linux文本编辑器.md
+      - Linux设备: linux/linux设备.md
+      - Linux软件包: linux/linux软件包.md
+      - 虚拟机使用: linux/虚拟机使用.md
+  - Markdown:
+      - Markdown概览: Markdown/Markdown.md
+      - Foam: Markdown/Foam.md
+      - LaTeX: Markdown/LaTeX.md
+      - Mermaid: Markdown/Mermaid.md
+theme:
+  name: material
