@@ -1,8 +1,7 @@
-site_name: MuYun's NoteBook
+site_name: Bernard's NoteBook
 repo_url: https://github.com/BernardYan2357/BernardYan2357.github.io
 repo_name: BernardYan2357.github.io
 markdown_extensions:
-  - tables
   - fenced_code
   - codehilite:
       guess_lang: false
@@ -30,17 +29,29 @@ extra_javascript:
 
 theme:
   language: zh
-  variant: classic
+  palette:
+    - media: "(prefers-color-scheme: light)" # 根据用户的系统设置自动切换主题
+      scheme: default  # 使用默认的浅色主题
+      primary: indigo # 设置主色调为靛蓝色
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
   icon:
-    repo: fontawesome/brands/github
+    repo: fontawesome/brands/github # 使用 Font Awesome 的 GitHub 图标
   features:
-    - navigation.footer
-    - content.code.copy
+    - navigation.footer # 启用页脚导航
+    - content.code.copy # 启用代码复制按钮
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/BernardYan2357
-copyright: "Copyright &copy; <year> <name>"
+copyright: "Copyright &copy; 2026 BernardYan2357. Build with Zensical."
 nav:
   - Home: index.md
   - 计算机视觉:
