@@ -1,17 +1,37 @@
 site_name: MuYun's NoteBook
 markdown_extensions:
+  - tables
+  - fenced_code
+  - codehilite:
+      guess_lang: false
+      pygments_lang_class: true
+  - pymdownx.highlight:
+      use_pygments: true
+      auto_title: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.arithmatex:
       generic: true
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
 
 theme:
   language: zh
   variant: classic
   features:
     - navigation.footer
+    - content.code.copy
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -49,3 +69,13 @@ nav:
       - Foam: Markdown/Foam.md
       - LaTeX: Markdown/LaTeX.md
       - Mermaid: Markdown/Mermaid.md
+  - 软件使用笔记:
+      - 电脑自救笔记: Software/电脑自救笔记.md
+      - Anaconda使用: Software/Anaconda使用.md
+      - blender: Software/blender.md
+      - CLI工具: Software/CLI工具.md
+      - Git使用笔记: Software/Git使用笔记.md
+      - MCP&Agent: Software/MCP&Agent.md
+      - Multisim使用笔记: Software/Multisim使用笔记.md
+      - VSCode使用笔记: Software/VSCode使用笔记.md
+      - Windows优化指北: Software/Windows优化指北.md
