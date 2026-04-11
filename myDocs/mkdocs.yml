@@ -1,4 +1,6 @@
 site_name: MuYun's NoteBook
+repo_url: https://github.com/BernardYan2357/BernardYan2357.github.io
+repo_name: BernardYan2357.github.io
 markdown_extensions:
   - tables
   - fenced_code
@@ -29,6 +31,8 @@ extra_javascript:
 theme:
   language: zh
   variant: classic
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.footer
     - content.code.copy
