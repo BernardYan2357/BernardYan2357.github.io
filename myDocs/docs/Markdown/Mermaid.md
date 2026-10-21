@@ -1,6 +1,6 @@
-# md绘制图表
+# Mermaid
 
-Mermaid 是最流行的 Markdown 图表工具之一，它允许你使用简单的文本语法生成各种图表。
+Mermaid 是最流行的 Markdown 图表工具之一，它使用简单的文本语法生成各种图表
 
 使用前需要确保你的 Markdown 编辑器或渲染器支持 Mermaid 语法。可下载插件：名称: 
 [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)

@@ -1,6 +1,12 @@
 # linux
 
-## 发行版本
+References: [只学够用的 Linux：零基础最小入门教程 – 颢天](https://www.zouht.com/4399.html)
+
+## 内核
+
+我们常说的 Linux 并不是一个操作系统，它只是一个**操作系统内核**，要构建一个完整可用的操作系统，需要加入大量的用户空间软件，最终构建成五花八门的**发行版**
+
+## 发行版
 
 - **Ubuntu**：基于Debian，用户界面友好，适合初学者和桌面用户。
   - Ubuntu-20.04: Python 3.8.2
@@ -11,7 +17,7 @@
 - **Kail linux**：专为渗透测试和安全研究设计，预装了大量安全工具。
 - **Fedora**：由Red Hat支持，包含最新的软件和技术，适合开发者和桌面用户。
 
-## linux目录
+## linux 目录
 
 ```bash
 ├── bin          # bin是Binary的缩写。存放系统中最常用的可执行文件（二进制）。
@@ -64,9 +70,9 @@
 - `.gz`：gzip压缩格式，一般与.tar结合使用，形成`.tar.gz`或`.tgz`格式的压缩包。
 - `.sh`：Shell脚本文件，包含一系列命令，可以在Linux终端中执行。
 
-## linux终端
+## linux 终端
 
-### .bashrc文件
+### .bashrc 文件
 
 .bashrc 是一个隐藏文件，位于用户的主目录下（例如 `/home/username/.bashrc`），它是 Bash shell 的配置文件之一。每次启动一个新的终端会话时，Bash 都会读取并执行这个文件中的命令。
 
@@ -76,6 +82,6 @@
 gedit ~/.bashrc  # 使用 gedit 编辑器
 ```
 
-### linux常用命令
+### linux 命令
 
 ![[linux命令]]

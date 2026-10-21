@@ -9,6 +9,7 @@
     - `sudo apt update`：更新软件包列表
     - `sudo apt upgrade`：升级已安装的软件包
     - `sudo apt install <package>`：安装软件包
+    - `sudo apt-get install <package>`：安装软件包，`apt-get` 是传统、底层的 APT 工具，输出简洁，适合脚本
     - `sudo apt remove <package>`：删除软件包
 - **YUM（Yellowdog Updater, Modified）**：主要用于Red Hat及其衍生版（如CentOS）。使用`.rpm`格式的软件包。
   - 常用命令：
@@ -17,17 +18,29 @@
     - `sudo yum install <package>`：安装软件包
     - `sudo yum remove <package>`：删除软件包
 
+### APT 软件源
+
+#### PPA
+
+PPA 是 Ubuntu 特有的个人软件包存档，适合添加单个软件
+
+```bash
+sudo add-apt-repository ppa:用户/仓库名
+sudo apt update
+```
+
 ## linux源码包
 
-源码包通常以`.tar.gz`或`.tar.bz2`等格式分发，包含了软件的源代码。需要手动编译和安装。
+源码包通常以`.tar.gz`或`.tar.bz2`等格式分发，包含了软件的源代码。需要手动编译和安装
 
 ## linux二进制包
 
-二进制包，也就是源码包经过成功编译之后产生的包。
+二进制包，也就是源码包经过成功编译之后产生的包
 
 目前主要有以下 2 大主流的二进制包管理系统：
-- RPM 包管理系统：很多 Linux 发行版都默认使用此机制作为软件安装的管理方式，例如 Fedora、CentOS、SuSE 等。其对应的包文件格式为 `.rpm`。
-- DPKG 包管理系统：由 Debian Linux 所开发的包管理机制，主要应用在 Debian 和 Ubuntu 中。其对应的包文件格式为 `.deb`。
+
+- RPM 包管理系统：很多 Linux 发行版都默认使用此机制作为软件安装的管理方式，例如 Fedora、CentOS、SuSE 等。其对应的包文件格式为 `.rpm`
+- DPKG 包管理系统：由 Debian Linux 所开发的包管理机制，主要应用在 Debian 和 Ubuntu 中。其对应的包文件格式为 `.deb`
 
 ### RPM包
 
@@ -36,9 +49,10 @@
 `包名-版本号-发布次数-发行商-Linux平台-适合的硬件平台-包扩展名`
 
 适合的硬件平台：
-- i386	Intel 80386 架构（第三代 x86，32位）
-- i586	Intel Pentium 架构（第五代 x86）
-- i686	Intel Pentium Pro 及以上（第六代 x86）
+
+- i386 Intel 80386 架构（第三代 x86，32位）
+- i586 Intel Pentium 架构（第五代 x86）
+- i686 Intel Pentium Pro 及以上（第六代 x86）
 - x86_64 也称amd64，是AMD芯片架构
 - noarch 没有硬件限制
 
@@ -114,14 +128,9 @@ sudo apt install /path/to/package.deb # 使用apt安装deb包，可以自动处�
 sudo dpkg -r package_name # 卸载软件包
 sudo apt remove example_package # 使用apt卸载软件包
 ```
+
 #### 查询DEB包
 
 ```bash
 dpkg -l | grep <关键字> # 列出所有已安装的包，并通过关键字过滤
 ```
-
-#### DEB包制作
-
-data.tar.gz包含的是实际安装的程序数据，而在安装过程中，该包里的数据会被直接解压到根目录(即 / )，因此在打包之前需要根据文件所在位置设置好相应的文件/目录树。
-
-https://foamnotes.com/user/recipes/automatically-expand-urls-to-well-titled-links

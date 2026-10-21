@@ -1,15 +1,115 @@
 # Linux优化笔记
 
+## 磁盘空间清理
+
+### 找出空间被谁占用
+
+```bash
+df -h # 查看各分区使用情况
+du -sh /* 2>/dev/null | sort -h # 查看根目录下各文件夹大小（按大小排序）
+du -h --max-depth=1 / | sort -h # 同上，只显示一层目录
+```
+
+更推荐安装交互式工具 `ncdu`，方向键进入目录、`d` 删除文件：
+
+```bash
+sudo apt install ncdu
+ncdu / # 扫描根目录，也可指定如 ncdu ~
+```
+
+查找大于 500MB 的单个文件：
+
+```bash
+sudo find / -xdev -type f -size +500M -exec ls -lh {} \;
+```
+
+> `-xdev` 表示不跨文件系统，避免扫描到 /proc、挂载的其他盘
+
+### 清理包管理器缓存与无用依赖
+
+```bash
+sudo apt autoremove --purge    # 删除不再需要的依赖和旧内核（最常用）
+sudo apt clean                 # 清空 /var/cache/apt/archives 的 deb 包缓存
+sudo apt autoclean             # 只清理已无法下载的旧包
+sudo rm -rf /var/lib/snapd/cache/* # 清理 snap 的包缓存
+sudo snap set system refresh.retain=2 # 限制 snap 保留版本数
+```
+
+### 清理系统日志
+
+`systemd` 系统的日志常占几个 GB：
+
+```bash
+journalctl --disk-usage                  # 查看日志占用
+sudo journalctl --vacuum-size=100M       # 只保留 100MB
+sudo journalctl --vacuum-time=7d         # 只保留最近 7 天
+```
+
+### 清理 Docker
+
+```bash
+docker system df               # 先查看镜像/容器/卷占用
+docker system prune            # 删除停止的容器、悬空镜像、无用网络
+docker system prune -a --volumes  # 连未使用的镜像和数据卷一起删（谨慎！）
+```
+
+### 清理用户目录
+
+```bash
+# 回收站
+rm -rf ~/.local/share/Trash/*
+
+# 各应用缓存（可安全删除，需要时会重新生成）
+du -sh ~/.cache/* | sort -h
+rm -rf ~/.cache/<对应程序>
+
+# pip / conda 缓存
+pip cache purge
+conda clean --all # 详见 Anaconda 笔记
+```
+
+### 其他
+
+- `/tmp`：临时文件，重启一般自动清空，也可手动删除其中的旧文件
+
+> WSL2 注意：在 Linux 内删除文件后，Windows 上的 `.vhdx` 虚拟磁盘文件**不会自动缩小**，需要在 PowerShell 中压缩，见 [[WSL2]]
+
 ## lolcat
 
 一些有趣的命令行工具：
 - Cowsay
 - jp2a：图片转 ASCII 字符画
-- Neoftech
 - cbonsai
 - cmartix
 - pips
 - aquarium
+
+## Fastfetch
+
+安装：
+```bash
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+sudo apt update
+sudo apt install fastfetch
+```
+
+使用：
+```bash
+fastfetch
+fastfetch --logo small
+```
+
+每天显示一次：
+```bash
+# ~/.bashrc
+FASTFETCH_STAMP="$HOME/.cache/fastfetch_last_run"
+TODAY=$(date +%Y-%m-%d)
+if [ ! -f "$FASTFETCH_STAMP" ] || [ "$(cat "$FASTFETCH_STAMP" 2>/dev/null)" != "$TODAY" ]; then
+    mkdir -p "$HOME/.cache"
+    fastfetch --logo small
+    echo "$TODAY" > "$FASTFETCH_STAMP"
+fi
+```
 
 ## gnome-tweaks
 

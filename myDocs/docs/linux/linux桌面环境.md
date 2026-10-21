@@ -23,7 +23,7 @@
 安装XFCE
 ```bash
 sudo apt update
-sudo apt install xfce4 xfce4-goodies
+sudo apt install xfce4 xfce4-goodies lightdm
 # 核心组件说明：
 # xfwm4：XFCE 窗口管理器，负责窗口管理和主题渲染
 # xfce4-panel：任务栏面板，可添加应用启动器、系统托盘等插件
@@ -75,3 +75,42 @@ sudo nano /etc/lightdm/lightdm.conf
 autologin-user=sunrise
 autologin-user-timeout=0
 ```
+
+### GNOME
+
+安装 Ubuntu Desktop，也是 GNOME 桌面环境：
+```bash
+sudo apt update
+sudo apt install ubuntu-desktop gdm3
+# 在弹出的界面中选择 gdm3 作为默认显示管理器，如果没有弹出界面，可以使用以下命令手动设置：
+sudo dpkg-reconfigure gdm3
+# 重启，在登录界面选择 Ubuntu 会话
+```
+
+禁用自动锁屏与屏幕保护：
+```bash
+# 禁用屏保
+gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
+# 禁用自动锁屏
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+# 保持屏幕常亮
+gsettings set org.gnome.desktop.session idle-delay 0
+# 禁用GNOME会话锁定
+nano /etc/gdm3/custom.conf
+# 取消注释并设置为 false
+AutomaticLoginEnable=false
+```
+
+## 问题
+
+### NoMachine 连接一小段时间后锁屏
+
+1. 禁用自动锁屏与屏幕保护（见上文）
+2. 编辑`/etc/NX/node.conf`，添加或修改：
+  ```bash
+  SessionLogLevel 1
+  EnableUnixSharedMemory 0
+  ```
+
+### NoMachine 连接后显示黑屏/灰屏
+
