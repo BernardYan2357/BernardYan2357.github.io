@@ -162,7 +162,7 @@ ${pi/2.0}
 ${wheel_radius*2}
 ```
 
-属性也可以在 xacro 命令行里面指定 value，详见：[[ROS2建模#使用]]
+属性也可以在 xacro 命令行里面指定 value，详见：[[ROS2建模#XACRO的解析]]
 
 #### 参数（Arg）
 
@@ -267,7 +267,7 @@ Node(
 
 ## 建模规范
 
-对于车辆模型，一般需要指定 base_link（机器人本体坐标系）和 base_footprint（机器人投影坐标系），即 base_link 在地面的 2D 投影，坐标系命名规范参考：[[TF2#坐标系命名规范]]
+对于车辆模型，一般需要指定 base_link（机器人本体坐标系）和 base_footprint（机器人投影坐标系），即 base_link 在地面的 2D 投影，坐标系命名规范参考：[[TF2#坐标系规范]]
 
 ### Soildworks 导出 URDF
 

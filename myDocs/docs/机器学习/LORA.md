@@ -1,4 +1,4 @@
-**LoRA（Low-Rank Adaptation）** 是一种高效的大模型微调技术，常用于大型语言模型（LLM）和扩散模型（[[机器学习词典#Diffusion Model]]）的领域适配或风格定制
+**LoRA（Low-Rank Adaptation）** 是一种高效的大模型微调技术，常用于大型语言模型（LLM）和扩散模型的领域适配或风格定制
 
 ### 核心思想
 

@@ -173,19 +173,19 @@ nav:
       - VPN: 网络/VPN.md
       - 远程连接: 网络/远程连接.md
   - Linux:
-      - linux: Linux/linux.md
-      - Docker: Linux/Docker.md
-      - Linux优化笔记: Linux/Linux优化笔记.md
-      - linux命令: Linux/linux命令.md
-      - linux文本编辑器: Linux/linux文本编辑器.md
-      - linux桌面环境: Linux/linux桌面环境.md
-      - linux设备: Linux/linux设备.md
-      - linux软件包: Linux/linux软件包.md
-      - RDK S100 使用笔记: Linux/RDK S100 使用笔记.md
-      - WSL2: Linux/WSL2.md
-      - 双系统: Linux/双系统.md
-      - 图形: Linux/图形.md
-      - 嵌入式Linux: Linux/嵌入式Linux.md
+      - linux: linux/linux.md
+      - Docker: linux/Docker.md
+      - Linux优化笔记: linux/Linux优化笔记.md
+      - linux命令: linux/linux命令.md
+      - linux文本编辑器: linux/linux文本编辑器.md
+      - linux桌面环境: linux/linux桌面环境.md
+      - linux设备: linux/linux设备.md
+      - linux软件包: linux/linux软件包.md
+      - RDK S100 使用笔记: linux/RDK S100 使用笔记.md
+      - WSL2: linux/WSL2.md
+      - 双系统: linux/双系统.md
+      - 图形: linux/图形.md
+      - 嵌入式Linux: linux/嵌入式Linux.md
   - Windows:
       - Windows优化指南: Windows/Windows优化指南.md
       - 安装软件的正确姿势: Windows/安装软件的正确姿势.md
