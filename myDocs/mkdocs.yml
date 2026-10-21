@@ -2,6 +2,21 @@ site_name: Bernard's NoteBook
 repo_url: https://github.com/BernardYan2357/BernardYan2357.github.io
 repo_name: BernardYan2357.github.io
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - footnotes
+  - toc:
+      permalink: true
+      slugify:
+        object: pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.quotes:
+      callouts: true
   - fenced_code
   - codehilite:
       guess_lang: false
@@ -52,43 +67,172 @@ extra:
 copyright: "Copyright &copy; 2026 BernardYan2357. Build with Zensical."
 nav:
   - Home: index.md
-  - 计算机视觉:
-      - CV基础知识: CV/CV基础知识.md
-      - OpenCV: CV/OpenCV.md
-      - 相机标定: CV/相机标定.md
-      - 双目测距: CV/双目测距.md
-      - 数据集: CV/数据集.md
-      - 视觉抓取方案: CV/视觉抓取方案.md
-      - 6D位姿估计: CV/6d位姿估计.md
+  - 机器视觉:
+      - 6d位姿估计: 机器视觉/6d位姿估计.md
+      - AprilTag&ArUco: 机器视觉/AprilTag&ArUco.md
+      - OpenCV: 机器视觉/OpenCV.md
+      - PnP 位姿估计: 机器视觉/PnP 位姿估计.md
+      - 手眼标定: 机器视觉/手眼标定.md
+      - 机器视觉词典: 机器视觉/机器视觉词典.md
+      - 机器视觉课程设计: 机器视觉/机器视觉课程设计.md
+      - 深度相机: 机器视觉/深度相机.md
+      - 点云: 机器视觉/点云.md
+      - 相机使用问题笔记: 机器视觉/相机使用问题笔记.md
+      - 相机标定: 机器视觉/相机标定.md
+      - 视觉抓取算法: 机器视觉/视觉抓取算法.md
       - YOLO:
-          - YOLO基础: CV/YOLO/YOLO基础.md
-          - YOLO训练: CV/YOLO/YOLO训练.md
-          - YOLO验证: CV/YOLO/YOLO验证.md
-          - YOLO预测: CV/YOLO/YOLO预测.md
+          - YOLO基础: 机器视觉/YOLO/YOLO基础.md
+          - YOLO训练: 机器视觉/YOLO/YOLO训练.md
+          - YOLO预测: 机器视觉/YOLO/YOLO预测.md
+          - YOLO验证: 机器视觉/YOLO/YOLO验证.md
+  - 机器学习:
+      - ACT算法: 机器学习/ACT算法.md
+      - Anaconda: 机器学习/Anaconda.md
+      - CNNorXFMR: 机器学习/CNNorXFMR.md
+      - Dataset: 机器学习/Dataset.md
+      - Jev: 机器学习/Jev.md
+      - LORA: 机器学习/LORA.md
+      - STT&TTS: 机器学习/STT&TTS.md
+      - Transformer: 机器学习/Transformer.md
+      - VLA: 机器学习/VLA.md
+      - VLM: 机器学习/VLM.md
+      - 图像生成: 机器学习/图像生成.md
+      - 多卡训练&推理: 机器学习/多卡训练&推理.md
+      - 学习lerobot: 机器学习/学习lerobot.md
+      - 机器学习词典: 机器学习/机器学习词典.md
+      - 模型优化方法: 机器学习/模型优化方法.md
+      - 线性神经网络: 机器学习/线性神经网络.md
+      - 续写器-Transformer初试: 机器学习/续写器-Transformer初试.md
+      - 强化学习:
+          - 强化学习: 机器学习/强化学习/强化学习.md
+          - mujoco: 机器学习/强化学习/mujoco.md
+  - 编程:
+      - Python: 编程/Python.md
+      - Rust: 编程/Rust.md
+      - 数据结构与算法: 编程/数据结构与算法.md
+      - 测试: 编程/测试.md
+      - 程序员词典: 编程/程序员词典.md
+      - 计算机基础: 编程/计算机基础.md
+      - 路径规划: 编程/路径规划.md
+      - CPP:
+          - Cpp: 编程/CPP/Cpp.md
+          - C: 编程/CPP/C.md
+          - 编译: 编程/CPP/编译.md
+  - ROS:
+      - ROS环境配置: ROS/ROS环境配置.md
+      - ROS节点通信: ROS/ROS节点通信.md
+  - ROS2:
+      - ROS2: ROS2/ROS2.md
+      - Gazebo: ROS2/Gazebo.md
+      - MoveIt2: ROS2/MoveIt2.md
+      - ROS2Control: ROS2/ROS2Control.md
+      - ROS2Launch: ROS2/ROS2Launch.md
+      - ROS2Node: ROS2/ROS2Node.md
+      - ROS2Param: ROS2/ROS2Param.md
+      - ROS2Pluginlib: ROS2/ROS2Pluginlib.md
+      - ROS2可视化: ROS2/ROS2可视化.md
+      - ROS2建模: ROS2/ROS2建模.md
+      - ROS2环境管理: ROS2/ROS2环境管理.md
+      - ROS2编程: ROS2/ROS2编程.md
+      - ROS2通信: ROS2/ROS2通信.md
+      - TF2: ROS2/TF2.md
+  - 控制:
+      - C语言实现控制算法: Control/C语言实现控制算法.md
+      - Filter: Control/Filter.md
+      - PID: Control/PID.md
+  - 硬件:
+      - PCB设计笔记: Hardware/PCB设计笔记.md
+      - 机械臂: Hardware/机械臂.md
+      - 硬件接口: Hardware/硬件接口.md
+      - 舵机: Hardware/舵机.md
+  - 嵌入式:
+      - openmv: 嵌入式/openmv.md
+      - ESP32:
+          - ESP32: 嵌入式/ESP32/ESP32.md
+          - ESP32对接PS2手柄: 嵌入式/ESP32/ESP32对接PS2手柄.md
+      - STM32:
+          - ADC&DMA: 嵌入式/STM32/ADC&DMA.md
+          - BKP&RTC: 嵌入式/STM32/BKP&RTC.md
+          - GPIO: 嵌入式/STM32/GPIO.md
+          - OLED显示屏: 嵌入式/STM32/OLED显示屏.md
+          - STM32BUG笔记: 嵌入式/STM32/STM32BUG笔记.md
+          - STM32概览: 嵌入式/STM32/STM32概览.md
+          - TIM: 嵌入式/STM32/TIM.md
+          - XR2206信号发生器: 嵌入式/STM32/XR2206信号发生器.md
+          - 中断系统和外部中断: 嵌入式/STM32/中断系统和外部中断.md
+          - 工程管理: 嵌入式/STM32/工程管理.md
+          - 程序调试: 嵌入式/STM32/程序调试.md
+          - 软件的使用: 嵌入式/STM32/软件的使用.md
+          - 通信协议: 嵌入式/STM32/通信协议.md
+  - 通信:
+      - 通信: 通信/通信.md
+      - UART: 通信/UART.md
+  - 网络:
+      - Proxy: 网络/Proxy.md
+      - VPN: 网络/VPN.md
+      - 远程连接: 网络/远程连接.md
   - Linux:
-      - Linux概览: linux/linux.md
-      - Linux命令: linux/linux命令.md
-      - Linux桌面环境: linux/linux桌面环境.md
-      - 远程连接: linux/远程连接.md
-      - Docker使用: linux/Docker使用.md
-      - Linux优化笔记: linux/Linux优化笔记.md
-      - WSL2: linux/WSL2.md
-      - Linux文本编辑器: linux/linux文本编辑器.md
-      - Linux设备: linux/linux设备.md
-      - Linux软件包: linux/linux软件包.md
-      - 虚拟机使用: linux/虚拟机使用.md
-  - Markdown:
-      - Markdown概览: Markdown/Markdown.md
-      - Foam: Markdown/Foam.md
-      - LaTeX: Markdown/LaTeX.md
-      - Mermaid: Markdown/Mermaid.md
+      - linux: Linux/linux.md
+      - Docker: Linux/Docker.md
+      - Linux优化笔记: Linux/Linux优化笔记.md
+      - linux命令: Linux/linux命令.md
+      - linux文本编辑器: Linux/linux文本编辑器.md
+      - linux桌面环境: Linux/linux桌面环境.md
+      - linux设备: Linux/linux设备.md
+      - linux软件包: Linux/linux软件包.md
+      - RDK S100 使用笔记: Linux/RDK S100 使用笔记.md
+      - WSL2: Linux/WSL2.md
+      - 双系统: Linux/双系统.md
+      - 图形: Linux/图形.md
+      - 嵌入式Linux: Linux/嵌入式Linux.md
+  - Windows:
+      - Windows优化指南: Windows/Windows优化指南.md
+      - 安装软件的正确姿势: Windows/安装软件的正确姿势.md
+      - 电脑BUG笔记: Windows/电脑BUG笔记.md
+      - 设置环境变量: Windows/设置环境变量.md
+  - Web:
+      - HTML: Web/HTML.md
+      - HTTP: Web/HTTP.md
+      - Node.js: Web/Node.js.md
+      - SQL: Web/SQL.md
+      - Unix时间戳: Web/Unix时间戳.md
+      - Web应用开发: Web/Web应用开发.md
+      - 个人博客搭建: Web/个人博客搭建.md
+      - 几种配置文件: Web/几种配置文件.md
+  - Agent:
+      - Agent: Agent/Agent.md
+      - MCP: Agent/MCP.md
+      - Skill: Agent/Skill.md
+      - 如何用AI写代码: Agent/如何用AI写代码.md
+      - 购买GPTPlus笔记: Agent/购买GPTPlus笔记.md
   - 软件使用笔记:
-      - 电脑自救笔记: Software/电脑自救笔记.md
-      - Anaconda使用: Software/Anaconda使用.md
-      - blender: Software/blender.md
-      - CLI工具: Software/CLI工具.md
-      - Git使用笔记: Software/Git使用笔记.md
-      - MCP&Agent: Software/MCP&Agent.md
-      - Multisim使用笔记: Software/Multisim使用笔记.md
-      - VSCode使用笔记: Software/VSCode使用笔记.md
-      - Windows优化指北: Software/Windows优化指北.md
+      - CLI: Software/CLI.md
+      - Git: Software/Git.md
+      - KeePass: Software/KeePass.md
+      - Matlab: Software/Matlab.md
+      - Media: Software/Media.md
+      - Multisim: Software/Multisim.md
+      - obsidian: Software/obsidian.md
+      - VSCode: Software/VSCode.md
+      - Word: Software/Word.md
+      - Zotero: Software/Zotero.md
+      - 虚拟机使用笔记: Software/虚拟机使用笔记.md
+      - QQbot指南:
+          - Koishi的使用: Software/QQbot指南/Koishi的使用.md
+          - Linux服务器部署QQbot: Software/QQbot指南/Linux服务器部署QQbot.md
+          - napcat的使用: Software/QQbot指南/napcat的使用.md
+          - 插件列表: Software/QQbot指南/插件列表.md
+          - 插件食用方法:
+              - Memes-api的Linux食用方法: Software/QQbot指南/插件食用方法/Memes-api的Linux食用方法.md
+              - Pixluna插件部署: Software/QQbot指南/插件食用方法/Pixluna插件部署.md
+  - 建模:
+      - 3D打印: 建模/3D打印.md
+      - Blender: 建模/Blender.md
+      - FreeCAD: 建模/FreeCAD.md
+  - 数学:
+      - LaTeX: Math/LaTeX.md
+      - 左乘与右乘: Math/左乘与右乘.md
+  - Markdown:
+      - Markdown: Markdown/Markdown.md
+      - Marp: Markdown/Marp.md
+      - Mermaid: Markdown/Mermaid.md
