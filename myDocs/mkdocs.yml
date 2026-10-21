@@ -2,6 +2,7 @@ site_name: Bernard's NoteBook
 repo_url: https://github.com/BernardYan2357/BernardYan2357.github.io
 repo_name: BernardYan2357.github.io
 markdown_extensions:
+  - attr_list
   - admonition
   - pymdownx.details
   - footnotes
